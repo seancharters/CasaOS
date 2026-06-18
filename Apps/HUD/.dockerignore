@@ -1,0 +1,9 @@
+.next/
+node_modules/
+.git/
+.gitignore
+.env
+.env.*
+*.md
+2025_Brand_Guidelines.jpeg
+.claude/

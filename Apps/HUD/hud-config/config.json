@@ -1,0 +1,76 @@
+{
+  "connectwise": {
+    "siteUrl": "aus.myconnectwise.net",
+    "companyId": "cloudcontext",
+    "publicKey": "yw8CDj0mSHeETs0a",
+    "privateKey": "CM1FNEIGjtZt1xFk",
+    "clientId": "acf14d17-18fb-4b0a-a745-ddf504f21822"
+  },
+  "threecx": {
+    "host": "cloudcontext.3cx.com.au:5001",
+    "clientId": "900",
+    "clientSecret": "bYWooruhsdeGMX1aghngMB6l9bsUIMox",
+    "username": "900",
+    "password": "bYWooruhsdeGMX1aghngMB6l9bsUIMox"
+  },
+  "postgres": {
+    "host": "wallboard.cloudcontext.com.au",
+    "port": "5432",
+    "database": "db_3cx",
+    "username": "cc_3cx",
+    "password": "uXk6EDNeD0TD]^rrdwjCC(Lnky}2$!YQ",
+    "ssl": false
+  },
+  "dashboard": {
+    "loginStatus": {
+      "excludeExtensions": "102,103,104,106,108,110,111,112,113,114,115,116,117,120,121,122,200,201",
+      "filterStatus": "all",
+      "columns": "name,extension,status"
+    },
+    "callStats": {
+      "hiddenMetrics": "",
+      "onCallQueueId": "64",
+      "voicemailExtension": ""
+    },
+    "ticketStats": {
+      "boardNames": "Managed Services - LinxCC Port Services,Managed Services - Onsite,Managed Services - Support",
+      "boardName": "Managed Services - Support, Managed Services - LinxCC Port Services"
+    },
+    "ticketsChart": {
+      "excludeMembers": "cbutt,menkababyan,pperkovic,linxcc-cpearson,cheng,schandra",
+      "maxEntries": "10"
+    },
+    "priorityTickets": {
+      "includePriorities": "1,2",
+      "boardNames": "Managed Services - Alerts,Managed Services - LinxCC Port Services,Managed Services - Onsite,Managed Services - Support,Managed Services - U-Go Mobility",
+      "maxRows": "20",
+      "columns": "id,priority,status,company,engineer,summary",
+      "boardName": ""
+    }
+  },
+  "dashboardSales": {
+    "loginStatus": {
+      "excludeExtensions": "102,104,105,107,109,110,111,112,113,114,115,116,117,119,120,121,122,123,200,201",
+      "filterStatus": "all",
+      "columns": "name,extension,status"
+    },
+    "callStats": {
+      "hiddenMetrics": "",
+      "onCallQueueId": "64",
+      "voicemailExtension": "201"
+    },
+    "ticketStats": {
+      "boardNames": "Managed Services - Alerts,Managed Services - LinxCC Port Services,Managed Services - Onsite,Managed Services - Support,Managed Services - U-Go Mobility"
+    },
+    "ticketsChart": {
+      "excludeMembers": "",
+      "maxEntries": "10"
+    },
+    "priorityTickets": {
+      "includePriorities": "1,2",
+      "boardNames": "",
+      "maxRows": "20",
+      "columns": "id,priority,status,company,engineer,summary"
+    }
+  }
+}

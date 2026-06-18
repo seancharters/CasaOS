@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito', 'Gilroy', system-ui, sans-serif;
+
+  --color-brand-purple: #8421de;
+  --color-brand-orange: #fe6600;
+  --color-brand-light-purple: #9d4fe1;
+  --color-brand-light-orange: #fc8532;
+  --color-brand-cream: #fbf4ef;
+
+  /* Dark theme (default) */
+  --color-hud-bg: #0a0a0a;
+  --color-hud-card: #141414;
+  --color-hud-border: #222222;
+  --color-hud-muted: #6b7280;
+  --color-hud-muted-light: #9ca3af;
+  --color-hud-text: #ffffff;
+}
+
+/* Light theme overrides */
+html.light {
+  --color-hud-bg: #f1f5f9;
+  --color-hud-card: #ffffff;
+  --color-hud-border: #e2e8f0;
+  --color-hud-muted: #64748b;
+  --color-hud-muted-light: #475569;
+  --color-hud-text: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-hud-bg);
+  color: var(--color-hud-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-hud-card);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-hud-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hud-muted);
+}
+
+/* Date inputs respect theme */
+input[type="date"] {
+  color-scheme: dark;
+}
+html.light input[type="date"] {
+  color-scheme: light;
+}

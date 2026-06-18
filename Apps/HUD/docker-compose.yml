@@ -1,0 +1,13 @@
+services:
+  hud:
+    build: .
+    container_name: cloud-context-hud
+    ports:
+      - "3000:3000"
+    volumes:
+      # Persists credentials outside the container.
+      # Create this folder on the host before first run:  mkdir -p ./hud-config
+      - ./hud-config:/config
+    environment:
+      - HUD_CONFIG_DIR=/config
+    restart: unless-stopped
