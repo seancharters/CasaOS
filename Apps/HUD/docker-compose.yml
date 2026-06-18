@@ -1,13 +1,43 @@
+name: cloud-context-hud
 services:
   hud:
-    build: .
+    image: cloudcontext/hud:1.0.0
     container_name: cloud-context-hud
     ports:
-      - "3000:3000"
+      - target: 3000
+        published: ${WEBUI_PORT:-3000}
+        protocol: tcp
     volumes:
-      # Persists credentials outside the container.
-      # Create this folder on the host before first run:  mkdir -p ./hud-config
-      - ./hud-config:/config
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
     environment:
       - HUD_CONFIG_DIR=/config
     restart: unless-stopped
+    x-casaos:
+      ports:
+        - container: "3000"
+          description:
+            en_US: Web UI port
+      volumes:
+        - container: /config
+          description:
+            en_US: HUD configuration directory
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: hud
+  author: Cloud Context
+  category: Dashboard
+  description:
+    en_US: A real-time dashboard displaying ConnectWise ticket queues and 3CX phone system trunk and agent status.
+  developer: Cloud Context
+  icon: https://cdn.jsdelivr.net/gh/seancharters/CasaOS-AppStore@main/Apps/HUD/icon.png
+  tagline:
+    en_US: ConnectWise & 3CX live dashboard.
+  title:
+    en_US: HUD
+  index: /
+  port_map: "${WEBUI_PORT:-3000}"
