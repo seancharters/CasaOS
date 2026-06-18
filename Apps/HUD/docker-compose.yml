@@ -1,15 +1,15 @@
 name: cloud-context-hud
 services:
   hud:
-    image: cloudcontext/hud:1.0.0
+    image: ghcr.io/seancharters/hud:1.0.0
     container_name: cloud-context-hud
     ports:
       - target: 3000
-        published: ${WEBUI_PORT:-3000}
+        published: "3000"
         protocol: tcp
     volumes:
       - type: bind
-        source: /DATA/AppData/$AppID/config
+        source: /DATA/AppData/cloud-context-hud/config
         target: /config
     environment:
       - HUD_CONFIG_DIR=/config
@@ -40,4 +40,4 @@ x-casaos:
   title:
     en_US: HUD
   index: /
-  port_map: "${WEBUI_PORT:-3000}"
+  port_map: "3000"
